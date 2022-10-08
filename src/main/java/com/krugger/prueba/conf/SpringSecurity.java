@@ -7,7 +7,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-@SuppressWarnings("deprecation")
 @Configuration
 @EnableWebSecurity
 public class SpringSecurity extends WebSecurityConfigurerAdapter {
@@ -16,9 +15,11 @@ public class SpringSecurity extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/vacunas", "/vacunas/filtrar").hasRole("ADMIN")
+                .antMatchers("/vacunas", "/vacunas/filtrar").hasRole("admin")
                 .antMatchers("/vacunas/modificar/**", "/vacunas/datos/**", "/rest/api/**")
-                .authenticated().and().httpBasic();
+                .authenticated()
+                .and()
+                .httpBasic();
     }
 
 	@Bean

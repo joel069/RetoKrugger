@@ -55,7 +55,6 @@ public class ServiceEmpleado {
 		empusu.setRol(reporol.findrol("user"));
 		data.setUsuario(empusu);
 		
-		System.out.println(data);
 		
 		return repoempleado.save(data); 
 		
@@ -80,7 +79,6 @@ public class ServiceEmpleado {
 			SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 			String Inicio = simpleDateFormat.format(datos.getInicia());
 			String Final = simpleDateFormat.format(datos.getFin());
-			System.out.println(Inicio);
 			emp = repoempleado.findDatosporfechasdesdehasta(Inicio,Final);
 			return emp;
 		}else if (datos.getTipo() != null) {
@@ -104,9 +102,9 @@ public class ServiceEmpleado {
 				
 				
 				e.get().setApellido(datos.getApellido() != null ?  datos.getApellido() : e.get().getApellido());
-				e.get().setNombre(datos.getNombre()     != null ? datos.getApellido() : e.get().getApellido());
+				e.get().setNombre(datos.getNombre()     != null ? datos.getNombre() : e.get().getNombre());
 				e.get().setCorreo(datos.getCorreo()     != null ? datos.getCorreo() : e.get().getCorreo());
-				e.get().setDireccion(datos.getDireccion() != null ? datos.getCorreo() : e.get().getCorreo());
+				e.get().setDireccion(datos.getDireccion() != null ? datos.getDireccion() : e.get().getDireccion());
 				e.get().setCedula(datos.getCedula()     != null ? datos.getCedula() : e.get().getCedula());
 				e.get().setTelefono(datos.getTelefono() != null ? datos.getTelefono() : e.get().getTelefono());
 				e.get().setEstado(datos.getEstado()     != null ? datos.getEstado() : e.get().getEstado());

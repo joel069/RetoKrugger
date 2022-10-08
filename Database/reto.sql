@@ -67,4 +67,8 @@ ALTER TABLE IF EXISTS reto.tr_vacuna
     ON DELETE NO ACTION
     NOT VALID;
 
+
+INSERT INTO tr_rol (rol_nombre) VALUES('admin');
+INSERT INTO tr_rol (rol_nombre) VALUES('user',);
+
 END;

@@ -21,9 +21,9 @@ ejecución de la aplicación.
 
 Se genera el diagrama de Base de datos dando como resultado el siguiente:
 
+![Screenshot](assets/DIAGRAMA.png)
 
 
-![diagrama]('https://github.com/joel069/RetoKrugger/tree/main/assets/DIAGRAMA.png')
 
 ### 2. Desarrollo Microservicios
 
